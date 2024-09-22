@@ -1,28 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 
-interface Props {
-  name: string;
-  name2: string;
-  age: number;
-}
+// const Components = () => {
+//   return <></>;
+// };
 
-const Components = ({ name, name2, age }: Props) => {
-  return (
-    <>
-      <h1>firstName: {name}</h1>
-      <h2>lastName: {name2}</h2>
-      <h3>Age: {age}</h3>
-    </>
-  );
-};
+// interface Props {
+//   counter: number;
+// }
 
 const App = () => {
+  const [counter, setCounter] = useState<number>(5);
   return (
     <>
-      <Components name="john" name2="doe" age={23} />
-      <Components name="mike" name2="doe" age={43} />
-      <Components name="mark" name2="doe" age={30} />
-      <Components name="james" name2="doe" age={2} />
+      <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
+      <h1>{counter}</h1>
+      <button onClick={() => setCounter((prev) => (prev += 1))}>+</button>
     </>
   );
 };
