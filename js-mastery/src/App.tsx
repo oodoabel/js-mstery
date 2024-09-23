@@ -10,12 +10,19 @@ import "./App.css";
 // }
 
 const App = () => {
-  const [counter, setCounter] = useState<number>(5);
+  const [live, setLive] = useState("23");
+  const [check, setCheck] = useState(true);
   return (
     <>
-      <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
-      <h1>{counter}</h1>
-      <button onClick={() => setCounter((prev) => (prev += 1))}>+</button>
+      <h1>{live}</h1>
+      <input
+        className="form-control"
+        onChange={(event) => check && setLive(event.target.value)}
+      />
+      <input
+        type="checkbox"
+        onChange={(event) => setCheck(event.target.checked)}
+      />
     </>
   );
 };

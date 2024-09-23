@@ -4,6 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+.form{
+  justify-content: start;
+  align-items: start;
+}
 
 .logo {
   height: 6em;
